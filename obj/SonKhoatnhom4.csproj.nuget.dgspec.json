@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\BTH2\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {}
+    "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {}
   },
   "projects": {
-    "C:\\BTH2\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {
+    "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\BTH2\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
+        "projectUniqueName": "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
         "projectName": "SonKhoatnhom4",
-        "projectPath": "C:\\BTH2\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
+        "projectPath": "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\BTH2\\SonKhoatnhom4\\obj\\",
+        "outputPath": "C:\\SonKhoatnhom4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,30 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

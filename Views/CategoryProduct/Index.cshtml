@@ -1,0 +1,48 @@
+@model IEnumerable<SonKhoatnhom4.Models.CategoryProduct>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh mục hàng hóa</h1>
+<div class="row">
+    <div class="col-md-6">
+            <a asp-action="Create">Create New</a>
+
+    </div>
+     <div class="col-md-6">
+            <a asp-action="Upload">Upload excel</a>
+
+    </div>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenHangHoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thongtinhanghoa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenHangHoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thongtinhanghoa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaHangHoa">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaHangHoa">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaHangHoa">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
