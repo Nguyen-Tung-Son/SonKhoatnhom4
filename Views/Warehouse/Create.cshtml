@@ -1,0 +1,50 @@
+@model SonKhoatnhom4.Models.Warehouse
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Warehouse</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaHangHoa" class="control-label"></label>
+                <select asp-for="MaHangHoa" class ="form-control" asp-items="ViewBag.MaHangHoa"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenHangHoa" class="control-label"></label>
+                <input asp-for="TenHangHoa" class="form-control" />
+                <span asp-validation-for="TenHangHoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mancc" class="control-label"></label>
+                <select asp-for="Mancc" class ="form-control" asp-items="ViewBag.Mancc"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tenncc" class="control-label"></label>
+                <select asp-for="Tenncc" class="form-control" asp-items="ViewBag.Tenncc"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trangthai" class="control-label"></label>
+                <input asp-for="Trangthai" class="form-control" />
+                <span asp-validation-for="Trangthai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
