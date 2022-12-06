@@ -16555,6 +16555,11 @@
   "RootNamespace": "SonKhoatnhom4",
   "Documents": [
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\CategoryProduct\\Delete.cshtml",
+      "TargetPath": "Views\\CategoryProduct\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Danhsachnhanvien\\Delete.cshtml",
       "TargetPath": "Views\\Danhsachnhanvien\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16580,6 +16585,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Warehouse\\Delete.cshtml",
+      "TargetPath": "Views\\Warehouse\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Danhsachkhachhang\\Create.cshtml",
       "TargetPath": "Views\\Danhsachkhachhang\\Create.cshtml",
       "FileKind": "mvc"
@@ -16595,6 +16605,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\ImportStorage\\Create.cshtml",
+      "TargetPath": "Views\\ImportStorage\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Danhsachnhanvien\\Create.cshtml",
       "TargetPath": "Views\\Danhsachnhanvien\\Create.cshtml",
       "FileKind": "mvc"
@@ -16602,6 +16617,11 @@
     {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\ImportStorage\\Edit.cshtml",
+      "TargetPath": "Views\\ImportStorage\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16620,8 +16640,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Warehouse\\Create.cshtml",
+      "TargetPath": "Views\\Warehouse\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\DanhsachNCC\\Delete.cshtml",
       "TargetPath": "Views\\DanhsachNCC\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Warehouse\\Edit.cshtml",
+      "TargetPath": "Views\\Warehouse\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Warehouse\\Details.cshtml",
+      "TargetPath": "Views\\Warehouse\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16640,8 +16675,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\ImportStorage\\Delete.cshtml",
+      "TargetPath": "Views\\ImportStorage\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Danhsachnhanvien\\Index.cshtml",
       "TargetPath": "Views\\Danhsachnhanvien\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\ImportStorage\\Index.cshtml",
+      "TargetPath": "Views\\ImportStorage\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\CategoryProduct\\Create.cshtml",
+      "TargetPath": "Views\\CategoryProduct\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16655,6 +16705,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\CategoryProduct\\Index.cshtml",
+      "TargetPath": "Views\\CategoryProduct\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\DanhsachNCC\\Edit.cshtml",
       "TargetPath": "Views\\DanhsachNCC\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16662,6 +16717,26 @@
     {
       "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Danhsachnhanvien\\Edit.cshtml",
       "TargetPath": "Views\\Danhsachnhanvien\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\ImportStorage\\Details.cshtml",
+      "TargetPath": "Views\\ImportStorage\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\CategoryProduct\\Details.cshtml",
+      "TargetPath": "Views\\CategoryProduct\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\Warehouse\\Index.cshtml",
+      "TargetPath": "Views\\Warehouse\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\BTH2\\SonKhoatnhom4\\Views\\CategoryProduct\\Edit.cshtml",
+      "TargetPath": "Views\\CategoryProduct\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],
