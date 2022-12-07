@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SonKhoatnhom4.Data;
 using SonKhoatnhom4.Models;
+using SonKhoatnhom4.Models.Process;
 
 namespace SonKhoatnhom4.Controllers
 {
     public class DanhsachnhanvienController : Controller
     {
         private readonly ApplicationDbContext _context;
+        StringProcess strPro= new StringProcess();
 
         public DanhsachnhanvienController(ApplicationDbContext context)
         {
@@ -48,6 +50,13 @@ namespace SonKhoatnhom4.Controllers
         // GET: Danhsachnhanvien/Create
         public IActionResult Create()
         {
+            var newManhanvien = "NV001";
+            var countNhanvien = _context.Danhsachnhanvien.Count();
+            if( countNhanvien>0){
+                var Manhanvien = _context.Danhsachnhanvien.OrderByDescending(m =>m.Manhanvien).First().Manhanvien;
+                newManhanvien = strPro.AutoGenerateCode(Manhanvien);
+            }
+            ViewBag.newId = newManhanvien;
             return View();
         }
 

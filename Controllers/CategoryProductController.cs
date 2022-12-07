@@ -14,7 +14,7 @@ namespace SonKhoatnhom4.Controllers
     {
         private readonly ApplicationDbContext _context;
         private ExcelProcess _excelProcess=new ExcelProcess();
-                StringProcess strPro= new StringProcess();
+        StringProcess strPro= new StringProcess();
 
 
 

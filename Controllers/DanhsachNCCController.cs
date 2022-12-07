@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SonKhoatnhom4.Data;
 using SonKhoatnhom4.Models;
+using SonKhoatnhom4.Models.Process;
 
 namespace SonKhoatnhom4.Controllers
 {
     public class DanhsachNCCController : Controller
     {
         private readonly ApplicationDbContext _context;
+        StringProcess strPro= new StringProcess();
 
         public DanhsachNCCController(ApplicationDbContext context)
         {
@@ -48,6 +50,13 @@ namespace SonKhoatnhom4.Controllers
         // GET: DanhsachNCC/Create
         public IActionResult Create()
         {
+            var newMancc = "NCC001";
+            var countNcc = _context.DanhsachNCC.Count();
+            if( countNcc>0){
+                var Mancc = _context.DanhsachNCC.OrderByDescending(m =>m.Mancc).First().Mancc;
+                newMancc = strPro.AutoGenerateCode(Mancc);
+            }
+            ViewBag.newId = newMancc;
             return View();
         }
 
