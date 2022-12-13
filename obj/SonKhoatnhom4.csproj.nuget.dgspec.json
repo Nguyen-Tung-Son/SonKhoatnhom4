@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {}
+    "C:\\Users\\ADMIN\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {}
   },
   "projects": {
-    "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {
+    "C:\\Users\\ADMIN\\SonKhoatnhom4\\SonKhoatnhom4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
         "projectName": "SonKhoatnhom4",
-        "projectPath": "C:\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\SonKhoatnhom4\\SonKhoatnhom4.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\SonKhoatnhom4\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\SonKhoatnhom4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

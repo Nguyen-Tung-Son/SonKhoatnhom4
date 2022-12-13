@@ -22,7 +22,7 @@ namespace SonKhoatnhom4.Controllers
         // GET: Warehouse
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Warehouse.Include(w => w.CategoryProduct).Include(w => w.DanhsachNCC);
+            var applicationDbContext = _context.Warehouse.Include(w => w.CategoryProduct).Include(w => w.DanhsachNCC).Include(w => w.Danhsachkhachhang);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -37,6 +37,7 @@ namespace SonKhoatnhom4.Controllers
             var warehouse = await _context.Warehouse
                 .Include(w => w.CategoryProduct)
                 .Include(w => w.DanhsachNCC)
+                .Include(w => w.Danhsachkhachhang)
                 .FirstOrDefaultAsync(m => m.MaHangHoa == id);
             if (warehouse == null)
             {
@@ -49,9 +50,9 @@ namespace SonKhoatnhom4.Controllers
         // GET: Warehouse/Create
         public IActionResult Create()
         {
-            ViewData["MaHangHoa"] = new SelectList(_context.Set<CategoryProduct>(), "MaHangHoa", "MaHangHoa");
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa");
             ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc");
-            ViewData["Tenncc"] = new SelectList(_context.DanhsachNCC, "Tenncc", "Tenncc");
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang");
             return View();
         }
 
@@ -68,10 +69,9 @@ namespace SonKhoatnhom4.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MaHangHoa"] = new SelectList(_context.Set<CategoryProduct>(), "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
             ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc", warehouse.Mancc);
-            ViewData["Tenncc"] = new SelectList(_context.DanhsachNCC, "Tenncc", "Tenncc", warehouse.Tenncc);
-
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang", warehouse.Makhachhang);
             return View(warehouse);
         }
 
@@ -88,8 +88,9 @@ namespace SonKhoatnhom4.Controllers
             {
                 return NotFound();
             }
-            ViewData["MaHangHoa"] = new SelectList(_context.Set<CategoryProduct>(), "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
             ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc", warehouse.Mancc);
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang", warehouse.Makhachhang);
             return View(warehouse);
         }
 
@@ -125,11 +126,69 @@ namespace SonKhoatnhom4.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MaHangHoa"] = new SelectList(_context.Set<CategoryProduct>(), "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
             ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc", warehouse.Mancc);
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang", warehouse.Makhachhang);
             return View(warehouse);
         }
 
+ public async Task<IActionResult> Export(string id)
+        {
+            if (id == null || _context.Warehouse == null)
+            {
+                return NotFound();
+            }
+
+            var warehouse = await _context.Warehouse.FindAsync(id);
+            if (warehouse == null)
+            {
+                return NotFound();
+            }
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
+            ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc", warehouse.Mancc);
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang", warehouse.Makhachhang);
+            return View(warehouse);
+        }
+
+        // POST: Warehouse/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Export(string id, [Bind("MaHangHoa,TenHangHoa,Mancc,Tenncc,Trangthai,MaXuatkho,Makhachhang")] Warehouse warehouse)
+        {
+            if (id != warehouse.MaHangHoa)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(warehouse);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!WarehouseExists(warehouse.MaHangHoa))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["MaHangHoa"] = new SelectList(_context.CategoryProduct, "MaHangHoa", "MaHangHoa", warehouse.MaHangHoa);
+            ViewData["Mancc"] = new SelectList(_context.DanhsachNCC, "Mancc", "Mancc", warehouse.Mancc);
+            ViewData["Makhachhang"] = new SelectList(_context.Danhsachkhachhang, "Makhachhang", "Makhachhang", warehouse.Makhachhang);
+            return View(warehouse);
+        }
+
+       
         // GET: Warehouse/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
@@ -141,6 +200,7 @@ namespace SonKhoatnhom4.Controllers
             var warehouse = await _context.Warehouse
                 .Include(w => w.CategoryProduct)
                 .Include(w => w.DanhsachNCC)
+                .Include(w => w.Danhsachkhachhang)
                 .FirstOrDefaultAsync(m => m.MaHangHoa == id);
             if (warehouse == null)
             {

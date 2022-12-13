@@ -127,6 +127,12 @@ namespace SonKhoatnhom4.Migrations
                     b.Property<string>("MaHangHoa")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("MaXuatkho")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Makhachhang")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Mancc")
                         .HasColumnType("TEXT");
 
@@ -140,6 +146,8 @@ namespace SonKhoatnhom4.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("MaHangHoa");
+
+                    b.HasIndex("Makhachhang");
 
                     b.HasIndex("Mancc");
 
@@ -169,6 +177,10 @@ namespace SonKhoatnhom4.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SonKhoatnhom4.Models.Danhsachkhachhang", "Danhsachkhachhang")
+                        .WithMany()
+                        .HasForeignKey("Makhachhang");
+
                     b.HasOne("SonKhoatnhom4.Models.DanhsachNCC", "DanhsachNCC")
                         .WithMany()
                         .HasForeignKey("Mancc");
@@ -176,6 +188,8 @@ namespace SonKhoatnhom4.Migrations
                     b.Navigation("CategoryProduct");
 
                     b.Navigation("DanhsachNCC");
+
+                    b.Navigation("Danhsachkhachhang");
                 });
 #pragma warning restore 612, 618
         }

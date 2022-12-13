@@ -1,16 +1,16 @@
 @model SonKhoatnhom4.Models.Warehouse
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Export";
 }
 
-<h1>Edit</h1>
+<h1>Xuất kho</h1>
 
 <h4>Warehouse</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Export">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MaHangHoa" />
             <div class="form-group">
@@ -30,8 +30,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Trangthai" class="control-label"></label>
-                <input asp-for="Trangthai" class="form-control" />
-                <span asp-validation-for="Trangthai" class="text-danger"></span>
+               <select asp-for="Trangthai" class ="form-control">
+                    <option>Xuất kho</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="MaXuatkho" class="control-label"></label>
@@ -44,7 +45,7 @@
                 <span asp-validation-for="Makhachhang" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Xuất kho" class="btn btn-primary" />
             </div>
         </form>
     </div>

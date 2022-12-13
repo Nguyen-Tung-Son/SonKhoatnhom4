@@ -4,14 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Kho hàng hóa</h1>
+<h1>Xuất Kho</h1>
 
-<p>
-    <a asp-action="Create">Nhập kho</a>
-</p>
 <table class="table">
     <thead>
         <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.MaXuatkho)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Makhachhang)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.CategoryProduct)
             </th>
@@ -33,17 +36,23 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-    @if (item.Trangthai == "Trong kho")
+    @if (item.Trangthai == "Xuất kho")
     {
          <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryProduct.MaHangHoa)
+                @Html.DisplayFor(modelItem => item.MaXuatkho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Makhachhang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHangHoa)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TenHangHoa)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DanhsachNCC.Mancc)
+                @Html.DisplayFor(modelItem => item.Mancc)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Tenncc)
@@ -52,12 +61,6 @@
                 @Html.DisplayFor(modelItem => item.Trangthai)
             </td>
            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MaHangHoa">Sửa</a> |
-                <a asp-action="Details" asp-route-id="@item.MaHangHoa">Xem</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaHangHoa">Xóa</a> |
-                <a asp-action="Export" asp-route-id="@item.MaHangHoa">Xuất kho</a>
-            </td>
         </tr>
     }
        

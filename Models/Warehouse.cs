@@ -17,4 +17,10 @@ public class Warehouse {
     
     public string? Tenncc { get; set; }
     public string? Trangthai { get; set; }
+    public string? MaXuatkho { get; set; }
+     public string? Makhachhang { get; set; }
+     [ForeignKey("Makhachhang")]
+     public Danhsachkhachhang? Danhsachkhachhang {get; set;}
+    
+    
 }
